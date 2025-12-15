@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTSEWA - Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Register Card -->
+        <div class="auth-card register-card active">
+            <div class="card-header">
+                <h1><i class="fas fa-user-plus"></i> Join FASTSEWA</h1>
+                <p>Create your account to access services</p>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messages"></div>
+
+            <form id="registerForm">
+                <div class="name-fields">
+                    <div class="form-group half">
+                        <label for="firstName">
+                            <i class="fas fa-user"></i> First Name
+                        </label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                        <div class="error-message" id="firstNameError"></div>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="lastName">
+                            <i class="fas fa-user"></i> Last Name
+                        </label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                        <div class="error-message" id="lastNameError"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">
+                        <i class="fas fa-envelope"></i> Email Address
+                    </label>
+                    <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+                    <div class="error-message" id="registerEmailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerUsername">
+                        <i class="fas fa-at"></i> Username
+                    </label>
+                    <input type="text" id="registerUsername" name="username" placeholder="Choose a username" required>
+                    <div class="error-message" id="registerUsernameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <div class="password-container">
+                        <input type="password" id="registerPassword" name="password"
+                            placeholder="Create a strong password" required>
+                        <button type="button" class="show-password" data-target="registerPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                    <div class="error-message" id="registerPasswordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password" required>
+                        <button type="button" class="show-password" data-target="confirmPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userType">
+                        <i class="fas fa-user-tag"></i> Account Type
+                    </label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Select account type</option>
+                        <option value="customer">Customer</option>
+                        <option value="service_provider">Service Provider</option>
+                        <option value="business">Business Account</option>
+                    </select>
+                    <div class="error-message" id="userTypeError"></div>
+                </div>
+
+                <div class="form-group terms">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" id="terms" required>
+                        <span>I agree to the <a href="#" id="termsLink">Terms of Service</a> and <a href="#"
+                                id="privacyLink">Privacy Policy</a></span>
+                    </label>
+                    <div class="error-message" id="termsError"></div>
+                </div>
+
+                <button type="submit" class="auth-btn">
+                    <span>Create Account</span>
+                    <div class="spinner"></div>
+                </button>
+
+                <div class="auth-switch">
+                    Already have an account?
+                    <a href="index.html">Login here</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Developer Footer -->
+        <div class="developer-footer">
+            <center>
+                <h3>Developer Details</h3>
+            </center>
+            <div class="developer-info">
+                <div class="developer-avatar">
+                    <img src="images/hari.jpg" alt="Developer"
+                        onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23667eea%22/><text x=%2250%22 y=%2255%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22>HK</text></svg>'">
+                    <div class="online-status"></div>
+                </div>
+                <div class="developer-details">
+                    <h5>Created by Harikesh Kumar</h5>
+                    <p>Full Stack Developer</p>
+                </div>
+            </div>
+
+            <div class="developer-contact">
+                <p class="developer-quote">
+                    <i class="fas fa-quote-left"></i>
+                    Building scalable web applications with modern technologies
+                    <i class="fas fa-quote-right"></i>
+                </p>
+                <div class="contact-links">
+                    <a href="https://github.com" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:harikesh@fastsewa.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://portfolio.com" target="_blank" class="contact-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal-overlay" id="termsModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-file-contract"></i> Terms of Service</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="terms-content">
+                    <h4>1. Acceptance of Terms</h4>
+                    <p>By accessing and using FASTSEWA services, you accept and agree to be bound by the terms...</p>
+
+                    <h4>2. User Accounts</h4>
+                    <p>You must provide accurate and complete information when creating an account...</p>
+
+                    <h4>3. Service Usage</h4>
+                    <p>FASTSEWA provides a platform for connecting service providers with customers...</p>
+
+                    <h4>4. Privacy</h4>
+                    <p>We respect your privacy and are committed to protecting your personal information...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary close-modal">I Understand</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal-overlay" id="privacyModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3><i class="fas fa-shield-alt"></i> Privacy Policy</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="privacy-content">
+                    <h4>Information We Collect</h4>
+                    <p>We collect information you provide directly to us, such as when you create an account...</p>
+
+                    <h4>How We Use Your Information</h4>
+                    <p>We use the information we collect to provide, maintain, and improve our services...</p>
+
+                    <h4>Information Sharing</h4>
+                    <p>We do not share your personal information with third parties except as described...</p>
+
+                    <h4>Data Security</h4>
+                    <p>We implement appropriate technical and organizational security measures...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary close-modal">I Understand</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

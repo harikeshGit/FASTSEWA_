@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTSEWA - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-bolt"></i> FASTSEWA</h1>
+            </div>
+
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#services" class="nav-link">
+                    <i class="fas fa-concierge-bell"></i> Services
+                </a>
+                <a href="#bookings" class="nav-link">
+                    <i class="fas fa-calendar-check"></i> Bookings
+                </a>
+                <a href="#profile" class="nav-link">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </div>
+
+            <div class="nav-user">
+                <div class="user-dropdown">
+                    <div class="user-info">
+                        <img src="images/hari.jpg" alt="User" class="user-avatar"
+                            onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23667eea%22/><text x=%2250%22 y=%2255%22 font-size=%2220%22 text-anchor=%22middle%22 fill=%22white%22>U</text></svg>'">
+                        <span id="userName">Guest User</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#profile" class="dropdown-item">
+                            <i class="fas fa-user-cog"></i> Profile Settings
+                        </a>
+                        <a href="#settings" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Account Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="dashboard-container">
+        <!-- Welcome Section -->
+        <div class="dashboard-header">
+            <h1>Welcome, <span id="welcomeName">Guest</span>!</h1>
+            <p id="currentTime"></p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalBookings">0</h3>
+                    <p>Total Bookings</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="completedServices">0</h3>
+                    <p>Completed Services</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="pendingRequests">0</h3>
+                    <p>Pending Requests</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="userRating">0.0</h3>
+                    <p>Your Rating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Recent Bookings</h2>
+                <a href="#all-bookings" class="view-all">View All</a>
+            </div>
+            <div class="bookings-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Provider</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentBookings">
+                        <!-- Bookings will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+            </div>
+            <div class="quick-actions">
+                <button class="action-btn" id="bookServiceBtn">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>Book New Service</span>
+                </button>
+                <button class="action-btn" id="findProviderBtn">
+                    <i class="fas fa-search"></i>
+                    <span>Find Provider</span>
+                </button>
+                <button class="action-btn" id="paymentBtn">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Make Payment</span>
+                </button>
+                <button class="action-btn" id="supportBtn">
+                    <i class="fas fa-headset"></i>
+                    <span>Contact Support</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Service Categories -->
+        <div class="dashboard-section">
+            <div class="section-header">
+                <h2><i class="fas fa-th-large"></i> Service Categories</h2>
+            </div>
+            <div class="categories-grid" id="serviceCategories">
+                <!-- Categories will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3><i class="fas fa-bolt"></i> FASTSEWA</h3>
+                <p>Connecting you with trusted service providers</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FASTSEWA. All rights reserved. | Created by Harikesh Kumar</p>
+        </div>
+    </footer>
+
+    <!-- Book Service Modal -->
+    <div class="modal-overlay" id="bookServiceModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus-circle"></i> Book New Service</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="bookServiceForm">
+                    <div class="form-group">
+                        <label for="serviceType">Service Type</label>
+                        <select id="serviceType" required>
+                            <option value="">Select Service</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="repair">Repair</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceDate">Preferred Date</label>
+                        <input type="date" id="serviceDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceTime">Preferred Time</label>
+                        <select id="serviceTime" required>
+                            <option value="">Select Time</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="2:00 PM">2:00 PM</option>
+                            <option value="4:00 PM">4:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceDescription">Description</label>
+                        <textarea id="serviceDescription" rows="3"
+                            placeholder="Describe your service requirement..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">Cancel</button>
+                <button class="btn-primary" id="confirmBooking">Book Service</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
