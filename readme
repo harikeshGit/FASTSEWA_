@@ -1,0 +1,16 @@
+# Navigate to backend folder
+cd backend
+
+# Install dependencies
+npm install
+
+# Fix any vulnerabilities
+npm audit fix
+
+# Create .env file (if not exists)
+echo "PORT=5000
+JWT_SECRET=your-super-secure-jwt-secret-key-change-this-in-production
+NODE_ENV=development" > .env
+
+# Start the server
+npm run dev
