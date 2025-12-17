@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Web Development",
+    "description": "Custom website development",
+    "price": 500,
+    "duration": 30
+  },
+  {
+    "id": 2,
+    "name": "Mobile App",
+    "description": "iOS and Android app development",
+    "price": 1000,
+    "duration": 60
+  },
+  {
+    "id": 3,
+    "name": "SEO Services",
+    "description": "Search engine optimization",
+    "price": 300,
+    "duration": 15
+  },
+  {
+    "id": 4,
+    "name": "UI/UX Design",
+    "description": "User interface and experience design",
+    "price": 400,
+    "duration": 45
+  }
+]
